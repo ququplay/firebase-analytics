@@ -3,7 +3,6 @@ ext {
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.6.1'
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.5'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.5.1'
-    firebaseAnalyticsVersion = project.hasProperty('firebaseAnalyticsVersion') ? rootProject.ext.firebaseAnalyticsVersion : '21.2.2'
 }
 
 buildscript {
@@ -16,7 +15,7 @@ buildscript {
 
         classpath 'com.android.tools.build:gradle:8.2.1'
 
-        classpath 'com.google.gms:google-services:4.4.0'
+        classpath 'com.google.gms:google-services:4.4.1'
     }
 }
 
@@ -58,13 +57,14 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
-    implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
 }
