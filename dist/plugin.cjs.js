@@ -1,7 +1,5 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-
 var core = require("@capacitor/core");
 
 const FirebaseAnalytics = core.registerPlugin("FirebaseAnalytics", {
@@ -250,7 +248,7 @@ class FirebaseAnalyticsWeb extends core.WebPlugin {
       await this.loadScript(firebaseAppScript.key, firebaseAppScript.src);
       await this.loadScript(
         firebaseAnalyticsScript.key,
-        firebaseAnalyticsScript.src
+        firebaseAnalyticsScript.src,
       );
       resolve(null);
     });

@@ -250,7 +250,7 @@ var capacitorPlugin = (function (exports, core) {
         await this.loadScript(firebaseAppScript.key, firebaseAppScript.src);
         await this.loadScript(
           firebaseAnalyticsScript.key,
-          firebaseAnalyticsScript.src
+          firebaseAnalyticsScript.src,
         );
         resolve(null);
       });
@@ -292,8 +292,6 @@ var capacitorPlugin = (function (exports, core) {
   });
 
   exports.FirebaseAnalytics = FirebaseAnalytics;
-
-  Object.defineProperty(exports, "__esModule", { value: true });
 
   return exports;
 })({}, capacitorExports);
