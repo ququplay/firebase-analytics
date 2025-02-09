@@ -236,7 +236,7 @@ export class FirebaseAnalyticsWeb extends WebPlugin {
       await this.loadScript(firebaseAppScript.key, firebaseAppScript.src);
       await this.loadScript(
         firebaseAnalyticsScript.key,
-        firebaseAnalyticsScript.src
+        firebaseAnalyticsScript.src,
       );
       resolve(null);
     });
